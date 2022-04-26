@@ -2,37 +2,60 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.navbar{
+  background-color:black;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+}
+.nav{
+  width: 100%;
+  
+}
+.navbar-brand{
+text-align: center;
+width: 15%;
+background-color: aqua;
+color: rgb(230, 213, 184)!important;
+}
+/******************************** navlink ********************************************/
+.nav-link{
+  color: rgb(230, 213, 184)!important;
+}
+.nav-link:hover{
+color:rgb(240, 165, 0)!important;
+}
+.nav-link.active{
+  color:rgb(228, 88, 38)!important;
   }
+  
+.navbar-nav{
+  width: 100% !important;
+}
+/**************************************** nav-toggler******************************/
+.navbar-toggler{
+background-color: rgb(230, 213, 184)!important;
+}
+.navbar-toggler:active{
+  background-color:rgb(228, 88, 38)!important;
+
+}
+/*******************************************dropdown-menu**************************************/
+.dropdown-menu{
+  background-color: black !important;
+  border: solid;
+  border-color: rgb(230, 213, 184)!important ;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.dropdown-item{
+color:  rgb(230, 213, 184)!important ;
 }
+.dropdown-item:hover{
+  color:rgb(240, 165, 0)!important;
+  background-color: black!important;
 
-.App-link {
-  color: #61dafb;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dropdown-item:active{
+  color:rgb(228, 88, 38)!important;
+}
+.dropdown-divider{
+  color:  rgb(230, 213, 184)!important ;
 }

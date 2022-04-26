@@ -1,7 +1,15 @@
 import React from 'react'
 import {Container,Navbar,Nav,NavDropdown} from 'react-bootstrap'
+import { useNavigate} from 'react-router-dom';
 
 function NavBar() {
+  const navigate = useNavigate();
+  const logout=()=>{
+    localStorage.removeItem('csrfToken')
+    localStorage.removeItem('role')
+    navigate('/');
+   
+  }
     return(
        
         <>
@@ -22,7 +30,9 @@ function NavBar() {
       <NavDropdown title="Compte" id="collasible-nav-dropdown">
         <NavDropdown.Item href="/profil">Profil</NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item href="/logout">logout</NavDropdown.Item>
+        <NavDropdown.Item>
+          <button onClick={logout}>logout</button>
+          </NavDropdown.Item>
       </NavDropdown>
     </Nav>
   </Navbar.Collapse>

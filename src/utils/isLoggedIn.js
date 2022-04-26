@@ -1,7 +1,8 @@
 function isLoggedIn() {
 	
-	return 'b2c';
-    
-    // !!localStorage.getItem('roles')
+	return (
+		localStorage.getItem('role','csrfToken')
+		
+	)
 }
 export default isLoggedIn;

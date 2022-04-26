@@ -4,7 +4,8 @@ import history from './utils/history';
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import Router from './routes/Router'
 import  'bootstrap/dist/css/bootstrap.min.css' ; 
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'bootstrap-icons/font/bootstrap-icons.css'
+import './App.css'
 class App extends Component {
 	render() {
 		return (
@@ -18,6 +19,7 @@ class App extends Component {
 					</BrowserRouter>
 					</Col>
 				</Row>
+				
 			</Container>
 		);
 	}
