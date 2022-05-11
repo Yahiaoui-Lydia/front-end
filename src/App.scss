@@ -1,0 +1,281 @@
+$primary_1: black;
+$primary_2: white;
+$primary_3: yellow;
+$primary_4:orange;
+
+$textcolor: darkblue;
+$fontsize: 18px;
+.App {
+  text-align: center;
+
+
+}
+
+.navbar{
+  background-color:black;
+
+}
+.nav{
+  width: 100%;
+  
+}
+.navbar-brand{
+text-align: center;
+width: 15%;
+color: $primary_2!important;
+display:flex;
+}
+/******************************** navlink ********************************************/
+.nav-link{
+  color: $primary_2!important;
+}
+.nav-link:hover{
+color:$primary_3 !important;
+}
+.nav-link.active{
+  color:$primary_4!important;
+  }
+  
+.navbar-nav{
+  width: 100% !important;
+}
+/**************************************** nav-toggler******************************/
+.navbar-toggler{
+background-color:$primary_2!important;
+}
+.navbar-toggler:active{
+  background-color:$primary_4!important;
+
+}
+/*******************************************dropdown-menu**************************************/
+.dropdown-menu{
+  background-color: $primary_1 !important;
+  border: solid;
+  border-color: $primary_2!important ;
+  color:  $primary_2!important ;
+}
+
+.dropdown-item{
+color:  $primary_2!important ;
+}
+.dropdown-item:hover{
+  color:$primary_3 !important;
+  background-color: $primary_1!important;
+
+}
+.dropdown-item:active{
+  color:$primary_4!important;
+}
+.dropdown-divider{
+  color:  $primary_2!important ;
+}
+.btn-dark {
+border:none !important;
+box-shadow:none !important;
+  background-color:$primary_1 !important;
+  color:  $primary_2!important ;
+}
+
+/***********************formulaire**********************************/
+.forms-limiter{
+  padding: 7px;
+}
+.forms{
+  width: 450px;
+   border: 5px solid transparent;
+   border-radius: 20px;
+   background: 
+     linear-gradient(to right,$primary_2,$primary_2), 
+     linear-gradient(to right,rgb(240, 165, 0) ,rgb(228, 88, 38),red); 
+   background-clip: padding-box, border-box;
+   background-origin: padding-box, border-box;
+ }
+  
+ .forms-title{
+  font-family: Poppins-Bold;
+  font-size: 39px;
+  color:$primary_1;
+  line-height: 1.2;
+  text-align: center;
+  }
+
+  .forms-group{
+    text-align: left;
+    width: 100%;
+    padding-bottom:20px;
+    position: relative;
+    padding-left:10px;
+    padding-right:0px;
+    }
+    .forms-label{
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: -5px;
+      left: 12px;
+     
+    
+    }
+
+    .forms-control{
+      font-family: Poppins-Medium;
+      font-size: 16px;
+      color: #000000;
+      line-height: 1.2;
+      height: 35px;
+      background:transparent;
+      padding: 0 7px 0 43px;
+      border-bottom: solid !important;
+      border-top: none !important;
+      border-left: none !important;
+      border-right: none !important;
+      border-radius: 0px  !important;
+      box-shadow: none !important ;
+      border-color:$primary_1 ;
+      
+    }
+    .forms-control:valid{
+      border-image: linear-gradient(45deg,rgb(240, 165, 0) ,rgb(228, 88, 38),red 100%);
+      border-image-slice: 9;
+      border-style: solid;
+     }
+     
+.forms-control:focus{
+   border-image: linear-gradient(45deg,rgb(240, 165, 0) ,rgb(228, 88, 38),red 100%);
+   border-image-slice: 9;
+  box-shadow: none !important ;
+  background-color: transparent;
+ }
+
+ .forms-btn{
+  font-family: Poppins-Medium;
+  font-size: 20px;
+  color: #000000;
+  width: 100%;
+  border: 4px solid transparent;
+  border-radius: 20px;
+  background: 
+    linear-gradient(145deg,rgb(240, 165, 0) 30% ,rgb(228, 88, 38) ,red ), 
+    linear-gradient(145deg  ,rgb(240, 165, 0) 30%,rgb(228, 88, 38),red); 
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  margin-top: 7px;
+}
+.forms-btn:hover{
+  color: #000000;
+  border: 4px solid transparent;
+  border-radius: 20px;
+  background: 
+  linear-gradient(145deg, red  ,rgb(228, 88, 38) ,rgb(240, 165, 0) ), 
+  linear-gradient(145deg, red  ,rgb(228, 88, 38) ,rgb(240, 165, 0) ); 
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+.forms-btn:focus{
+  color: #000000;
+  border: 4px solid transparent;
+  border-radius: 20px;
+  background: 
+  linear-gradient(145deg, rgb(240, 165, 0) ,rgb(228, 88, 38) ,red ), 
+  linear-gradient(145deg, rgb(240, 165, 0) ,rgb(228, 88, 38) ,red ); 
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  box-shadow: none;
+}
+.forms-btn:active{
+  box-shadow:none !important;
+}
+
+.forms-link{
+  font-family: Poppins-Medium;
+  text-align: right;
+  color: #000000;
+
+}
+.forms-link:hover{
+  color:$primary_3 !important ;
+}
+ .carouselItem{
+   height:400px;
+ }
+ .caroselImage{
+   height: 75%;
+ }
+ .carouselCaption{
+   font-size: 40px;
+   color:rgb(255, 255, 255) !important; }
+ .presentation{
+   text-align: center;
+ }
+ /*******************************foooter*************************************/
+ .footer-limiter{
+   background-color:$primary_1;
+ }
+ .footer{
+.footer-col{
+  color:$primary_2 ;
+  
+}
+.footer-btn{
+  color:$primary_2 ;
+  background-color:$primary_1;
+}
+ul {
+  list-style-type: none;
+  }
+}
+.navbarAdmin{
+  position: sticky !important;
+  top: 0;
+
+}
+.sidbar{
+  position: sticky !important;
+  left: 0;
+  top:0;
+}
+.modal{
+  .btn-alert-secondary{
+    background-color: rgb(196, 196, 196);
+  }
+  .btn-alert-danger{
+    background-color: red;
+  }
+  .modal-header{
+  
+  }
+}
+.sc-fnykZs{
+  background-color: aqua!important;
+}
+.bna{
+  background-color: rgb(196, 196, 196)!important;
+}
+
+@media (max-device-width: 460px){
+  .forms{
+    width: 320px !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    margin-left: 25px  !important;
+    margin-right: 2px  !important;
+  }
+  .forms-title{
+    font-size: 25px;
+  }
+  .forms-limiter{
+    width: 100% !important;
+    margin-left: 0px !important;
+    margin-right:0px !important;
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+  }
+  .forms-control{
+    width: 100% !important;
+    margin-left: 0px !important;
+    margin-right:0px !important;
+    padding-left: 20% !important;
+    padding-right: 0px !important;
+  }
+  }

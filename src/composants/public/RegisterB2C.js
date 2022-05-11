@@ -2,10 +2,9 @@
 import React, { useState } from 'react'
 import {Row,Button, Form,Col} from 'react-bootstrap'
 import axios from 'axios';
-import { useNavigate} from 'react-router-dom';
 
-function RegisterB2C() {
-  const navigate = useNavigate();
+
+function RegisterB2C(props) {
   const [erreur, setErreur] = useState('');
   const [validated, setValidated] = useState(false);
   const [nom, setNom] = useState('');
@@ -17,18 +16,16 @@ function RegisterB2C() {
   const handleChangeEmail= (event) => { setEmail(event.target.value) }
   const handleChangeNom= (event) => { setNom(event.target.value) }
   const handleChangePrenom= (event) => { setPrenom(event.target.value) }
-   const handleSubmit = (event) => {
-
+   const handleSubmit  = async (event) => {
 
     const form = event.currentTarget;
     if (form.checkValidity() === true) {
     
-      axios.post(process.env.REACT_APP_API_registerB2C , {password,email,nom,prenom  })
+      await axios.post(process.env.REACT_APP_API_registerB2C , {password,email,nom,prenom  })
         .then((response) => {
-          // Success 
-          localStorage.setItem('csrfToken',response.data.csrf )
-          localStorage.setItem('role',response.data.role )
-          navigate('/login');
+          props.isRegistred()
+          props.email(email)
+         
          
       })
       .catch((error) => {
@@ -51,63 +48,51 @@ function RegisterB2C() {
     
   }
   
-  
 
   return (
-    <div className='App d-flex flex-column align-items-center'>
+    <div className='App d-flex flex-column align-items-center' >
+    <Form noValidate validated={validated} onSubmit={handleSubmit} className='forms mx-3 my-3 pb-3 px-3'>
+  
+      <Row className=" forms-limiter" style={{}}>
+        <span className='forms-title mb-3'>S’inscrire en tant qu’entreprise</span>
+       
         <Form.Label style={{color:'red'}}> {erreur?erreur: null} </Form.Label>
-    <Form noValidate validated={validated} onSubmit={handleSubmit}>
-      <Row className="mb-3">
-
-      <Form.Group controlId="nom" as={Col}>
-            <Form.Label className='bi bi-person'> Nom</Form.Label>
-            <Form.Control onChange={handleChangeNom}
-                required
-                type="text"
-                placeholder="Nom"
-                />
-            <Form.Control.Feedback type="invalid">Veuillez saisir votre nom </Form.Control.Feedback>
-            <Form.Control.Feedback></Form.Control.Feedback>
+         
+        <Form.Group  as={Row} className='forms-group ' controlId="nom">
+                  <Form.Label column sm={2}  className='bi bi-person forms-label'></Form.Label>
+                  <Col>
+                  <Form.Control   onChange={handleChangeNom}required  type="text"  placeholder="Nom"className='forms-control py-0 my-0 '/>
+                  <Form.Control.Feedback type="invalid">Veuillez saisir votre nom</Form.Control.Feedback>
+                  </Col>
         </Form.Group>
 
-        <Form.Group controlId="prenom" as={Col}>
-            <Form.Label className='bi bi-person'> Prénom</Form.Label>
-            <Form.Control onChange={handleChangePrenom}
-                required
-                type="text"
-                placeholder="Prénom"
-                />
-            <Form.Control.Feedback type="invalid">Veuillez saisir votre prénom </Form.Control.Feedback>
-            <Form.Control.Feedback></Form.Control.Feedback>
+        <Form.Group  as={Row} className='forms-group ' controlId="prenom">
+                  <Form.Label column sm={2}  className='bi bi-person forms-label'></Form.Label>
+                  <Col>
+                  <Form.Control   onChange={handleChangePrenom} required  type="text"  placeholder="Prénom" className='forms-control py-0 my-0 '/>
+                  <Form.Control.Feedback type="invalid">Veuillez saisir votre prénom </Form.Control.Feedback>
+                  </Col>
+        </Form.Group>
+
+        <Form.Group  as={Row} className='forms-group ' controlId="email">
+                  <Form.Label  column sm={2}  className='bi bi-envelope forms-label '></Form.Label>
+                  <Col>
+                  <Form.Control onChange={handleChangeEmail} required type="email" placeholder="votre E-mail" className='forms-control py-0 my-0 '/>
+                  <Form.Control.Feedback type="invalid">Veuillez saisir une adresse email correcte </Form.Control.Feedback>
+                  </Col>
         </Form.Group>
         
-        <Form.Group controlId="email">
-            <Form.Label className='bi bi-envelope'> E-mail</Form.Label>
-            <Form.Control onChange={handleChangeEmail}
-                required
-                type="email"
-                placeholder="votre E-mail"
-            
-            />
-            <Form.Control.Feedback type="invalid">Veuillez saisir une adresse email correcte </Form.Control.Feedback>
-            <Form.Control.Feedback></Form.Control.Feedback>
+    
+        <Form.Group  as={Row}  controlId="password"   className='forms-group'>
+                  <Form.Label column sm={2} className='bi bi-lock  forms-label' ></Form.Label>
+                  <Col >
+                  <Form.Control  onChange={handleChangePassword} required type="password" placeholder="votre mot de passe" className='forms-control py-0 my-0 ' />
+                  <Form.Control.Feedback type="invalid">Veuillez saisir votre mot de passe  </Form.Control.Feedback>
+                  </Col>
         </Form.Group>
-      
-
-        <Form.Group controlId="password">
-          <Form.Label className='bi bi-lock'> Mot de passe</Form.Label>
-          <Form.Control onChange={handleChangePassword}
-            required
-            type="password"
-            placeholder="votre mot de passe"
-            />
-           <Form.Control.Feedback type="invalid">Veuillez saisir votre mot de passe  </Form.Control.Feedback>
-          <Form.Control.Feedback></Form.Control.Feedback>
-        </Form.Group>
-
 
         </Row>
-      <Button type="submit">login </Button>
+      <Button  type="submit"  className='forms-btn'>S'inscrire </Button>
     </Form>
     
 

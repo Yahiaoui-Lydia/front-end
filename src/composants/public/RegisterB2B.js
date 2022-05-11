@@ -52,60 +52,49 @@ function RegisterB2B(props) {
   
 
   return (
-    <div className='App d-flex flex-column align-items-center'>
+    <div className='App d-flex flex-column align-items-center' >
+    <Form noValidate validated={validated} onSubmit={handleSubmit} className='forms mx-3 my-3 pb-3 px-3'>
+  
+      <Row className=" forms-limiter" style={{}}>
+        <span className='forms-title mb-3'>S’inscrire en tant qu’entreprise</span>
+       
         <Form.Label style={{color:'red'}}> {erreur?erreur: null} </Form.Label>
-    <Form noValidate validated={validated} onSubmit={handleSubmit}>
-      <Row className="mb-3">
 
-      <Form.Group controlId="SIRET" as={Col}>
-            <Form.Label className='bi bi-building'> SIRET</Form.Label>
-            <Form.Control onChange={handleChangeSIRET}
-                required
-                type="text"
-                placeholder="SIRET"
-                />
-            <Form.Control.Feedback type="invalid">Veuillez saisir l'identifiant de votre entreprise  </Form.Control.Feedback>
-            <Form.Control.Feedback></Form.Control.Feedback>
+        <Form.Group  as={Row} className='forms-group 'controlId="SIRET">
+                  <Form.Label column sm={2}  className='bi bi-building forms-label '></Form.Label>
+                  <Col>
+                  <Form.Control   onChange={handleChangeSIRET} required  max={14} type="text" placeholder="Le numéro SIRET de votre entreprise" className='forms-control py-0 my-0 '/>
+                  <Form.Control.Feedback type="invalid">Veuillez saisir un numéro SIRET  correcte </Form.Control.Feedback>
+                  </Col>
         </Form.Group>
 
-        <Form.Group controlId="Nom de l'entreprise" as={Col}>
-            <Form.Label className='bi bi-building'>Nom de l'entreprise</Form.Label>
-            <Form.Control onChange={handleChangeNom}
-                required
-                type="text"
-                placeholder="Nom de l'entreprise"
-                />
-            <Form.Control.Feedback type="invalid">Veuillez saisir  le Nom de votre entreprise </Form.Control.Feedback>
-            <Form.Control.Feedback></Form.Control.Feedback>
+
+        <Form.Group  as={Row} className='forms-group ' controlId="Nom">
+                  <Form.Label   column sm={2}  className='bi bi-building forms-label '></Form.Label>
+                  <Col>
+                  <Form.Control onChange={handleChangeNom} required   type="text" placeholder="Nom de l'entreprise" className='forms-control py-0 my-0 '/>
+                  <Form.Control.Feedback type="invalid">Veuillez saisir  le Nom de votre entreprise</Form.Control.Feedback>
+                  </Col>
         </Form.Group>
         
-        <Form.Group controlId="email">
-            <Form.Label className='bi bi-envelope'> E-mail</Form.Label>
-            <Form.Control onChange={handleChangeEmail}
-                required
-                type="email"
-                placeholder="votre E-mail"
-            
-            />
-            <Form.Control.Feedback type="invalid">Veuillez saisir une adresse email correcte </Form.Control.Feedback>
-            <Form.Control.Feedback></Form.Control.Feedback>
+        <Form.Group  as={Row} className='forms-group ' controlId="email">
+                  <Form.Label  column sm={2}  className='bi bi-envelope forms-label '></Form.Label>
+                  <Col>
+                  <Form.Control  onChange={handleChangeEmail} required type="email" placeholder="votre E-mail" className='forms-control py-0 my-0 '/>
+                  <Form.Control.Feedback type="invalid">Veuillez saisir une adresse email correcte </Form.Control.Feedback>
+                  </Col>
         </Form.Group>
-      
-
-        <Form.Group controlId="password">
-          <Form.Label className='bi bi-lock'> Mot de passe</Form.Label>
-          <Form.Control onChange={handleChangePassword}
-            required
-            type="password"
-            placeholder="votre mot de passe"
-            />
-           <Form.Control.Feedback type="invalid">Veuillez saisir votre mot de passe  </Form.Control.Feedback>
-          <Form.Control.Feedback></Form.Control.Feedback>
+        
+        <Form.Group  as={Row}  controlId="password"   className='forms-group'>
+                  <Form.Label column sm={2} className='bi bi-lock  forms-label' ></Form.Label>
+                  <Col >
+                  <Form.Control  onChange={handleChangePassword} required type="password" placeholder="votre mot de passe" className='forms-control py-0 my-0 ' />
+                  <Form.Control.Feedback type="invalid">Veuillez saisir votre mot de passe  </Form.Control.Feedback>
+                  </Col>
         </Form.Group>
-
 
         </Row>
-      <Button type="submit" >login </Button>
+      <Button  type="submit"  className='forms-btn'>S'inscrire </Button>
     </Form>
     
 

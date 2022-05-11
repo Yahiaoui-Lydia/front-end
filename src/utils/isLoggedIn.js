@@ -1,7 +1,7 @@
 function isLoggedIn() {
 	
 	return (
-		localStorage.getItem('role','csrfToken')
+		localStorage.getItem('role')
 		
 	)
 }

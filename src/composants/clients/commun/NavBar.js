@@ -1,14 +1,8 @@
 import React from 'react'
 import {Container,Navbar,Nav,NavDropdown} from 'react-bootstrap'
-import { useNavigate} from 'react-router-dom';
+import logout from '../../../utils/logout'
 function NavBar() {
-  const navigate = useNavigate();
-  const logout=()=>{
-    localStorage.removeItem('csrfToken')
-    localStorage.removeItem('role')
-    navigate('/');
-   
-  }
+
     return(
        
         <>

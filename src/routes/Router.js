@@ -4,11 +4,11 @@ import AdminRoutes from './PrivateRoutes/AdminRoutes';
 import B2bRoutes from './PrivateRoutes/B2bRoutes';
 import B2cRoutes from './PrivateRoutes/B2cRoutes';
 import isLoggedIn from '../utils/isLoggedIn';
-import { useNavigate} from 'react-router-dom';
-function Router() {
-    const navigate = useNavigate();
-    if (isLoggedIn) {
 
+function Router() {
+   
+    if (isLoggedIn) {
+          console.log('router')
         if(isLoggedIn ()==='admin'){
             
             return(<AdminRoutes />) 

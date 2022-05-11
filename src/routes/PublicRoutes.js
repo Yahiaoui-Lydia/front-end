@@ -6,6 +6,10 @@ import isLoggedIn from '../utils/isLoggedIn';
 import Router from './Router';
 import Login from '../pages/public/Login';
 import InscriptionB2B from '../pages/public/InscriptionB2B';
+import InscriptionB2C from '../pages/public/InscriptionB2C';
+import RecupPassword from '../pages/public/RecupPassword';
+
+
 function verify() { 
     if (isLoggedIn()==='') {  
           return  <Navigate to="/"/> 
@@ -22,9 +26,11 @@ function PublicRoutes() {
         <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/login" element={<Login/>}/>
-        {/* <Route path="/registerB2C" element={<RegisterB2C/>}/> */}
+        <Route path="/registerB2C" element={<InscriptionB2C/>}/>
         <Route path="/registerB2B" element={<InscriptionB2B/>}/>
-        {/* <Route path="/forgot-password" element={<ForgotPassword/>}/> */}
+        <Route path="/forgot-password" element={<RecupPassword/>}/>
+       
+
         </Routes>
    </>
     )

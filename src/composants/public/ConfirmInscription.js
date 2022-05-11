@@ -41,33 +41,25 @@ function ConfirmInscription(props){
     
   }
     return(
-
-          <div className='App d-flex flex-column align-items-center' >
-    <Form noValidate validated={validated} onSubmit={handleSubmit} style={{borderColor:'black',border:'solid',borderWidth:'2px',borderRadius:'5px'}}  >
-    <legend>Entrez le code de sécurité</legend>
-    <fieldset style={{borderColor:'gray',borderTop:'solid',borderBottom:'solid',borderWidth:'1px'}} >
-
-    <Form.Label style={{color:'red'}}> {erreur?erreur: null} </Form.Label>
-    <div style={{width:'80%'}}>Merci de vérifier dans vos e-mails que vous avez reçu un message avec votre code. </div>  
-    <br/>
-      <Row className="mb-3">
-    
+ 
+        <div className='App d-flex flex-column align-items-center' >
+        <Form noValidate validated={validated} onSubmit={handleSubmit} className='forms mx-3 my-3 pb-3 px-3'>
+      
+          <Row className=" forms-limiter" style={{}}>
+            <span className='forms-title mb-3'>Confirmer votre compte</span>
+           
+            <Form.Label style={{color:'red'}}> {erreur?erreur: null} </Form.Label>
+            Merci de vérifier dans vos e-mails que vous avez reçu un message avec votre code
           
-            <Col sm={10}>
-            <Form.Control   
-             onChange={handleChangeCode}
-                required
-                type="text"
-                placeholder="Entrez code"
-                />
-            <Form.Control.Feedback type="invalid">Veuillez saisir un code </Form.Control.Feedback>
-            <Form.Control.Feedback></Form.Control.Feedback></Col>
-       
+            <Form.Group  as={Row} className='forms-group ' controlId="code">
+                  <Form.Label  column sm={2}  className='bi bi-envelope forms-label '></Form.Label>
+                  <Col>
+                  <Form.Control onChange={handleChangeCode} required type="email" placeholder="votre code" className='forms-control py-0 my-0 '/>
+                  <Form.Control.Feedback type="invalid">Veuillez saisir votre code  </Form.Control.Feedback>
+                  </Col>
+        </Form.Group>
         </Row>
-        </fieldset>
-        <Form.Group style={{'textAlign':'center'}}>
-      <Button type="submit" >Envoyer </Button>
-      </Form.Group>
+        <Button type="submit"  className='forms-btn'>Confirmer </Button>
     </Form>
     </div>
        
